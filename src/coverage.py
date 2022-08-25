@@ -10,7 +10,7 @@ else:
 print("Threshold: " + str(threshold))
 
 #Get the last line
-coverage_str = open('coverage.txt', 'r').readlines()[-1]
+coverage_str = open('coverage-report.txt', 'r').readlines()[-1]
 pattern =  r"^total\:\W+\w+\W+(?P<val>\d+\.\d)"
 m = re.search(pattern, coverage_str)
 cov = float(m.groups()[0])
