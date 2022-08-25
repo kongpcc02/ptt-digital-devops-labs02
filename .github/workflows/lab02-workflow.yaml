@@ -16,4 +16,6 @@ jobs:
             go-version-file: ./src/go.mod
         - name: Run Unit Test
           working-directory: ./src
-          run: go test ./...
+          run: go test ./... -coverprofile="coverage.out"
+        - name: list file
+          run: ls ${{ github.workspace }}
