@@ -38,3 +38,5 @@ jobs:
           - name: Reformat coverage report
             run: go tool cover -func coverage.out -o coverage.xml
           - name: Print out report
+            working-directory: ./src
+            run: cat coverage.txt
