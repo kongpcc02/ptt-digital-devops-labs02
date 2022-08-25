@@ -44,7 +44,7 @@ jobs:
             run: go tool cover -html coverage.out -o coverage-report.html 
           - name: Print out report
             working-directory: ./src
-            run: cat coverage.txt
+            run: cat coverage-report.txt
           - name: Upload coverage report to artifact
             uses: actions/upload-artifact@v3
             with:
