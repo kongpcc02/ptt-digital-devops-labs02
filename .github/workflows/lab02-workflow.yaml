@@ -15,6 +15,7 @@ jobs:
           with:
             go-version-file: ./src/go.mod
         - name: Prepare Unit Test
+          working-directory: ./src
           run: go mod download
         - name: Run Unit Test
           working-directory: ./src
