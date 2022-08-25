@@ -1,0 +1,19 @@
+name: Lab02-Workflows
+on:
+  workflow_dispatch:
+  push:
+    branches:
+        - "main"
+jobs:
+  unittest:
+    runs-on: ubuntu-latest
+    steps:
+        - uses: actions/checkout@v3 #Use checkout action to download the source code to run unittest
+          name: Checkout
+        - uses: actions/setup-go@v3 #Setup golang environment for runnint unittest
+          name: Setup Go environment
+          with:
+            go-version-file: ./src/go.mod
+        - name: Run Unit Test
+          working-directory: ./src
+          run: go test ./...
