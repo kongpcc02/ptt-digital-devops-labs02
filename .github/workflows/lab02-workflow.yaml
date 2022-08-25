@@ -14,8 +14,11 @@ jobs:
           name: Setup Go environment
           with:
             go-version-file: ./src/go.mod
+        - name: Prepare Unit Test
+          run: go mod download
         - name: Run Unit Test
           working-directory: ./src
-          run: go test ./... -coverprofile="coverage.out"
+          run: go test ./... -coverprofile="coverage.out" -v
         - name: list file
-          run: ls ${{ github.workspace }}
+          working-directory: ./src
+          run: ls -l
