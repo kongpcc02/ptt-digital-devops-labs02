@@ -9,10 +9,11 @@ jobs:
     name: SonarCloud
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
         with:
           fetch-depth: 0
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
           SONAR_TOKEN: 95c2c4b12ac15b514172a076ea15e898520de586
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
